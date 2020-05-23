@@ -1,10 +1,10 @@
-const path = require('path');
-const MODE = process.env.NODE_ENV;
-const DEBUG = MODE === 'development';
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const ImageminMozjqeg = require('imagemin-mozjpeg');
+const path = require('path')
+const MODE = process.env.NODE_ENV
+const DEBUG = MODE === 'development'
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ImageminPlugin = require('imagemin-webpack-plugin').default
+const ImageminMozjqeg = require('imagemin-mozjpeg')
 
 const urlLoader = {
   test: /\.(png|jpe?g|gif|svg)$/,
@@ -12,7 +12,7 @@ const urlLoader = {
   options: {
     esModule: false,
   },
-};
+}
 
 const fileLoader = {
   test: /\.(png|jpe?g|gif|svg)$/,
@@ -22,18 +22,18 @@ const fileLoader = {
       options: {
         name: '[name].[ext]',
         outputPath: (path) => {
-          return `img/${path}`;
+          return `img/${path}`
         },
         publicPath: (path) => {
-          return `./img/${path}`;
+          return `./img/${path}`
         },
         esModule: false,
       },
     },
   ],
-};
+}
 
-const imgLoader = DEBUG ? urlLoader : fileLoader;
+const imgLoader = DEBUG ? urlLoader : fileLoader
 
 module.exports = {
   mode: MODE,
@@ -62,7 +62,15 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        use: 'ts-loader',
+        use: [
+          'ts-loader',
+          {
+            loader: 'eslint-loader',
+            options: {
+              fix: true
+            }
+          }
+        ],
       },
       {
         test: /\.(sa|sc|c)ss$/,
@@ -142,4 +150,4 @@ module.exports = {
       ],
     }),
   ],
-};
+}
