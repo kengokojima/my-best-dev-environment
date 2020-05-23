@@ -5,6 +5,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const ImageminMozjqeg = require('imagemin-mozjpeg')
+const StylelintPlugin = require('stylelint-webpack-plugin')
+
+const STYLELINT = ['./src/scss/**/*.scss']
 
 const urlLoader = {
   test: /\.(png|jpe?g|gif|svg)$/,
@@ -67,9 +70,9 @@ module.exports = {
           {
             loader: 'eslint-loader',
             options: {
-              fix: true
-            }
-          }
+              fix: true,
+            },
+          },
         ],
       },
       {
@@ -130,6 +133,11 @@ module.exports = {
       template: './src/pug/index.pug',
       filename: './index.html',
       minify: false,
+    }),
+    new StylelintPlugin({
+      files: STYLELINT,
+      syntax: 'scss',
+      fix: true,
     }),
     new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
