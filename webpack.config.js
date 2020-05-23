@@ -38,6 +38,17 @@ const imgLoader = DEBUG ? urlLoader : fileLoader;
 module.exports = {
   mode: MODE,
 
+  devServer: {
+    open: true,
+    openPage: 'index.html',
+    contentBase: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
+    watchContentBase: true,
+    port: 3000,
+    inline: true,
+    hot: true,
+  },
+
   entry: {
     main: './src/ts/main.ts',
   },
