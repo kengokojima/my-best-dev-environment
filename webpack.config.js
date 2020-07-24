@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const ImageminMozjqeg = require('imagemin-mozjpeg')
 const StylelintPlugin = require('stylelint-webpack-plugin')
+const Globule = require('globule')
 
 const STYLELINT = ['./src/scss/**/*.scss']
 
@@ -38,7 +39,23 @@ const fileLoader = {
 
 const imgLoader = DEBUG ? urlLoader : fileLoader
 
-module.exports = {
+const generatePug = () => {
+  const documents = Globule.find('./src/pug/**/*.pug', {
+    ignore: ['./src/pug/**/_*.pug'],
+  })
+
+  documents.forEach((document) => {
+    const fileName = document.replace('./src/pug/', '').replace('.pug', '.html')
+    app.plugins.push(
+      new HtmlWebpackPlugin({
+        filename: `${fileName}`,
+        template: document,
+      })
+    )
+  })
+}
+
+const app = {
   mode: MODE,
 
   devServer: {
@@ -129,11 +146,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
     }),
-    new HtmlWebpackPlugin({
-      template: './src/pug/index.pug',
-      filename: './index.html',
-      minify: false,
-    }),
     new StylelintPlugin({
       files: STYLELINT,
       syntax: 'scss',
@@ -159,3 +171,6 @@ module.exports = {
     }),
   ],
 }
+
+generatePug()
+module.exports = app
