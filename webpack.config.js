@@ -64,9 +64,10 @@ const app = {
     contentBase: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     watchContentBase: true,
-    port: 3000,
+    port: 8005,
     inline: true,
     hot: true,
+    host: '0.0.0.0',
   },
 
   entry: {
