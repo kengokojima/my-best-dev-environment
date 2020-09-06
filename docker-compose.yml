@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    container_name: my_best_dev_environment
+    ports:
+      - 8005:8005
+    volumes:
+      - ./:/home/kengokojima/Documents
+    tty: true
+    stdin_open: true
