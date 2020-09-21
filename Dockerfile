@@ -14,12 +14,13 @@ RUN apk update && apk upgrade
 
 RUN apk add --no-cache \
     zsh \
-    git
+    git \
+    autoconf automake libtool gcc musl-dev make g++ file nasm
 
 # install oh-my-zsh
 RUN apk update && apk add --virtual=module curl && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-RUN git clone https://5c71c7d8729f1cc19b46468eb00cae56273041c1:x-oauth-basic@github.com/kengokojima/dotfiles.git
+#RUN git clone https://5c71c7d8729f1cc19b46468eb00cae56273041c1:x-oauth-basic@github.com/kengokojima/dotfiles.git
 
-RUN rm -r ./dotfiles/
+#RUN rm -r ./dotfiles/
 
