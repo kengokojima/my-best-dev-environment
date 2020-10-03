@@ -15,7 +15,7 @@ RUN apk update && apk upgrade
 RUN apk add --no-cache \
     zsh \
     git \
-    autoconf automake libtool gcc musl-dev make g++ file nasm
+    autoconf automake libtool make tiff jpeg zlib zlib-dev pkgconf nasm file gcc musl-dev
 
 # install oh-my-zsh
 RUN apk update && apk add --virtual=module curl && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
