@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d618c57-55d7-4c1e-b25a-33f29b783829" name="Default Changelist" comment="updated packages">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pug/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/pug/index.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1601603807636</updated>
       <workItem from="1601603809226" duration="11386000" />
-      <workItem from="1601732539340" duration="1631000" />
+      <workItem from="1601732539340" duration="5947000" />
     </task>
     <task id="LOCAL-00001" summary="updated packages">
       <created>1601689876326</created>

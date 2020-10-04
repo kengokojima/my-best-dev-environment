@@ -21,7 +21,8 @@ RUN apk add --no-cache \
     python-dev \
     py-pip \
     python3-dev \
-    py3-pip
+    py3-pip \
+    cargo
 
 # install oh-my-zsh
 RUN apk update && apk add --virtual=module curl && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -32,8 +33,14 @@ RUN git config --global user.name 'kengokojima' && git config --global user.emai
 
 RUN pip3 install neovim && mkdir -p ~/.config/nvim && mkdir -p ~/.vim/
 
-RUN git clone https://3fe615c1dd3dc6a949d7060888801a5e882ee3bb:x-oauth-basic@github.com/kengokojima/dotfiles.git
+RUN git clone https://ebd3430fa2c0bc24e076e55e48e72d7d05392073:x-oauth-basic@github.com/kengokojima/dotfiles.git
 
 RUN cp ./dotfiles/vimrc/init.vim ~/.config/nvim/ && cp ./dotfiles/.vim/dein.toml ~/.vim/
 
 RUN rm -r ./dotfiles/
+
+RUN git clone https://github.com/BurntSushi/ripgrep && \
+    cd ripgrep && \
+    cargo build --release && \
+    cp ./release/rg /usr/local/bin && \
+    rm -rf ../ripgrep/
