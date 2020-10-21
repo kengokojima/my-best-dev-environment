@@ -1,0 +1,34 @@
+openapi: 3.0.0
+info:
+  title: sample
+  version: '1.0'
+servers:
+  - url: https://jsonplaceholder.typicode.com
+paths:
+  '/todos/{id}':
+    get:
+      operationId: fetchBook
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          style: simple
+          explode: false
+      responses:
+        '200':
+          description: 'OK'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/book'
+components:
+  schemas:
+    book:
+      type: object
+      properties:
+        title:
+          type: string
+      required:
+        - title
