@@ -56,6 +56,12 @@ const generatePug = () => {
 }
 
 const app = {
+  cache: {
+    type: 'filesystem',
+    buildDependencies: {
+      config: [__filename],
+    },
+  },
   mode: MODE,
 
   devServer: {
