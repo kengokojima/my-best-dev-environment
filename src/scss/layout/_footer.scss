@@ -1,0 +1,5 @@
+@use '../global/' as g;
+
+.footer {
+  background: g.$color;
+}
