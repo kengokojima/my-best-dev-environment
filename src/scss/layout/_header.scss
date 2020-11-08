@@ -1,4 +1,9 @@
 @use '../global/' as g;
+
 .header {
-  background: #ffffff;
+  background: #000000;
+
+  &__inner {
+    background: g.$color;
+  }
 }

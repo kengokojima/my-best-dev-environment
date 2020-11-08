@@ -1,4 +1,12 @@
 @use '../global/' as g;
+
 .main {
-  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+
+  &__inner {
+    height: 100%;
+    background: g.$color;
+  }
 }

@@ -1,0 +1,7 @@
+@use "../global" as g;
+
+.max-width {
+  max-width: g.$maxWidth;
+  margin: 0 auto;
+  padding: 0 g.$gutter;
+}
