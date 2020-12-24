@@ -19,10 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d618c57-55d7-4c1e-b25a-33f29b783829" name="Default Changelist" comment="updated packages">
+    <list default="true" id="8d618c57-55d7-4c1e-b25a-33f29b783829" name="Default Changelist" comment="updated readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/foundation/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/foundation/_base.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +65,14 @@
       <updated>1601603807636</updated>
       <workItem from="1601603809226" duration="11386000" />
       <workItem from="1601732539340" duration="5947000" />
-      <workItem from="1607775494840" duration="1795000" />
+      <workItem from="1607775494840" duration="3535000" />
+      <workItem from="1607855036641" duration="1538000" />
+      <workItem from="1607865258686" duration="598000" />
+      <workItem from="1608095520637" duration="596000" />
+      <workItem from="1608126466651" duration="597000" />
+      <workItem from="1608275838004" duration="588000" />
+      <workItem from="1608369546010" duration="613000" />
+      <workItem from="1608532873732" duration="401000" />
     </task>
     <task id="LOCAL-00001" summary="updated packages">
       <created>1601689876326</created>
@@ -76,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601689876326</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="updated readme">
+      <created>1607777621886</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607777621886</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,6 +108,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updated packages" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated packages" />
+    <MESSAGE value="updated readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated readme" />
   </component>
 </project>
