@@ -1,10 +1,11 @@
+const ESLintPlugin = require('eslint-webpack-plugin')
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 const path = require('path')
 const MODE = process.env.NODE_ENV
 const DEBUG = MODE === 'development'
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ImageminPlugin = require('imagemin-webpack-plugin').default
-const ImageminMozjqeg = require('imagemin-mozjpeg')
+// const ImageminMozjqeg = require('imagemin-mozjpeg')
 const StylelintPlugin = require('stylelint-webpack-plugin')
 const Globule = require('globule')
 
@@ -65,15 +66,17 @@ const app = {
   mode: MODE,
 
   devServer: {
-    open: true,
-    openPage: 'index.html',
-    contentBase: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
-    watchContentBase: true,
-    port: 8005,
-    inline: true,
-    hot: true,
-    host: '0.0.0.0',
+    // open: true,
+    // openPage: 'index.html',
+    static: [
+      path.resolve(__dirname, 'dist'),
+      {
+        directory: path.resolve(__dirname, 'dist'),
+        publicPath: '/',
+        serveIndex: true,
+        watch: true,
+      },
+    ],
   },
 
   entry: {
@@ -89,15 +92,7 @@ const app = {
     rules: [
       {
         test: /\.ts$/,
-        use: [
-          'ts-loader',
-          {
-            loader: 'eslint-loader',
-            options: {
-              fix: true,
-            },
-          },
-        ],
+        use: ['ts-loader'],
       },
       {
         test: /\.(sa|sc|c)ss$/,
@@ -152,6 +147,10 @@ const app = {
   },
 
   plugins: [
+    new ESLintPlugin({
+      fix: true,
+      extensions: ['ts', 'js'],
+    }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
     }),
@@ -160,23 +159,30 @@ const app = {
       syntax: 'scss',
       fix: true,
     }),
-    new ImageminPlugin({
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      pngquant: {
-        quality: '65-80',
+
+    new ImageMinimizerPlugin({
+      minimizerOptions: {
+        plugins: [
+          ['gifsicle', { interlaced: true }],
+          ['mozjpeg', { quality: 85, progressive: true }],
+          [
+            'pngquant',
+            {
+              quality: [0.6, 0.8],
+            },
+          ],
+          [
+            'svgo',
+            {
+              plugins: [
+                {
+                  removeViewBox: false,
+                },
+              ],
+            },
+          ],
+        ],
       },
-      gifsicle: {
-        interlaced: false,
-        optimizationLevel: 1,
-        colors: 256,
-      },
-      svgo: {},
-      plugins: [
-        ImageminMozjqeg({
-          quality: 85,
-          progressive: true,
-        }),
-      ],
     }),
   ],
 }

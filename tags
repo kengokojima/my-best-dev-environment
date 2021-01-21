@@ -8,6 +8,7 @@
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20201011.0/
 DEBUG	webpack.config.js	/^const DEBUG = MODE === 'development'$/;"	C
+ESLintPlugin	webpack.config.js	/^const ESLintPlugin = require('eslint-webpack-plugin')$/;"	C
 Globule	webpack.config.js	/^const Globule = require('globule')$/;"	C
 HtmlWebpackPlugin	webpack.config.js	/^const HtmlWebpackPlugin = require('html-webpack-plugin')$/;"	C
 ImageminMozjqeg	webpack.config.js	/^const ImageminMozjqeg = require('imagemin-mozjpeg')$/;"	C
