@@ -11,8 +11,7 @@ DEBUG	webpack.config.js	/^const DEBUG = MODE === 'development'$/;"	C
 ESLintPlugin	webpack.config.js	/^const ESLintPlugin = require('eslint-webpack-plugin')$/;"	C
 Globule	webpack.config.js	/^const Globule = require('globule')$/;"	C
 HtmlWebpackPlugin	webpack.config.js	/^const HtmlWebpackPlugin = require('html-webpack-plugin')$/;"	C
-ImageminMozjqeg	webpack.config.js	/^const ImageminMozjqeg = require('imagemin-mozjpeg')$/;"	C
-ImageminPlugin	webpack.config.js	/^const ImageminPlugin = require('imagemin-webpack-plugin').default$/;"	C
+ImageMinimizerPlugin	webpack.config.js	/^const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')$/;"	C
 MODE	webpack.config.js	/^const MODE = process.env.NODE_ENV$/;"	C
 MiniCssExtractPlugin	webpack.config.js	/^const MiniCssExtractPlugin = require('mini-css-extract-plugin')$/;"	C
 STYLELINT	webpack.config.js	/^const STYLELINT = ['.\/src\/scss\/**\/*.scss']$/;"	C
@@ -21,8 +20,7 @@ app	webpack.config.js	/^const app = {$/;"	c
 buildDependencies	webpack.config.js	/^    buildDependencies: {$/;"	c	class:app.cache
 cache	webpack.config.js	/^  cache: {$/;"	c	class:app
 config	webpack.config.js	/^      config: [__filename],$/;"	p	class:app.cache.buildDependencies
-contentBase	webpack.config.js	/^    contentBase: path.resolve(__dirname, 'dist'),$/;"	p	class:app.devServer
-devServer	webpack.config.js	/^  devServer: {$/;"	c	class:app
+devServer	webpack.config.js	/^  devServer: {$/;"	p	class:app
 documents	webpack.config.js	/^  const documents = Globule.find('.\/src\/pug\/**\/*.pug', {$/;"	C
 entry	webpack.config.js	/^  entry: {$/;"	c	class:app
 esModule	webpack.config.js	/^    esModule: false,$/;"	p	class:urlLoader.options
@@ -30,23 +28,16 @@ extensions	webpack.config.js	/^    extensions: ['.ts', '.js'],$/;"	p	class:app.r
 fileLoader	webpack.config.js	/^const fileLoader = {$/;"	c
 filename	webpack.config.js	/^    filename: 'js\/[name].js',$/;"	p	class:app.output
 generatePug	webpack.config.js	/^const generatePug = () => {$/;"	C
-host	webpack.config.js	/^    host: '0.0.0.0',$/;"	p	class:app.devServer
-hot	webpack.config.js	/^    hot: true,$/;"	p	class:app.devServer
 imgLoader	webpack.config.js	/^const imgLoader = DEBUG ? urlLoader : fileLoader$/;"	C
-inline	webpack.config.js	/^    inline: true,$/;"	p	class:app.devServer
 loader	webpack.config.js	/^  loader: 'url-loader',$/;"	p	class:urlLoader
 main	webpack.config.js	/^    main: '.\/src\/ts\/main.ts',$/;"	p	class:app.entry
 mode	webpack.config.js	/^  mode: MODE,$/;"	p	class:app
 module	webpack.config.js	/^  module: {$/;"	c	class:app
-open	webpack.config.js	/^    open: true,$/;"	p	class:app.devServer
-openPage	webpack.config.js	/^    openPage: 'index.html',$/;"	p	class:app.devServer
 options	webpack.config.js	/^  options: {$/;"	c	class:urlLoader
 output	webpack.config.js	/^  output: {$/;"	c	class:app
 path	webpack.config.js	/^    path: path.resolve(__dirname, 'dist'),$/;"	p	class:app.output
 path	webpack.config.js	/^const path = require('path')$/;"	C
 plugins	webpack.config.js	/^  plugins: [$/;"	p	class:app
-port	webpack.config.js	/^    port: 8005,$/;"	p	class:app.devServer
-publicPath	webpack.config.js	/^    publicPath: '\/',$/;"	p	class:app.devServer
 resolve	webpack.config.js	/^  resolve: {$/;"	c	class:app
 rules	webpack.config.js	/^    rules: [$/;"	p	class:app.module
 test	webpack.config.js	/^  test: \/\\.(png|jpe?g|gif|svg)$\/,$/;"	p	class:fileLoader
@@ -54,4 +45,3 @@ test	webpack.config.js	/^  test: \/\\.(png|jpe?g|gif|svg)$\/,$/;"	p	class:urlLoa
 type	webpack.config.js	/^    type: 'filesystem',$/;"	p	class:app.cache
 urlLoader	webpack.config.js	/^const urlLoader = {$/;"	c
 use	webpack.config.js	/^  use: [$/;"	p	class:fileLoader
-watchContentBase	webpack.config.js	/^    watchContentBase: true,$/;"	p	class:app.devServer
