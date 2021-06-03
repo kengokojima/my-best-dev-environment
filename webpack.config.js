@@ -11,35 +11,6 @@ const Globule = require('globule')
 
 const STYLELINT = ['./src/scss/**/*.scss']
 
-const urlLoader = {
-  test: /\.(png|jpe?g|gif|svg)$/,
-  loader: 'url-loader',
-  options: {
-    esModule: false,
-  },
-}
-
-const fileLoader = {
-  test: /\.(png|jpe?g|gif|svg)$/,
-  use: [
-    {
-      loader: 'file-loader',
-      options: {
-        name: '[name].[ext]',
-        outputPath: (path) => {
-          return `img/${path}`
-        },
-        publicPath: (path) => {
-          return `./img/${path}`
-        },
-        esModule: false,
-      },
-    },
-  ],
-}
-
-const imgLoader = DEBUG ? urlLoader : fileLoader
-
 const generatePug = () => {
   const documents = Globule.find('./src/pug/**/*.pug', {
     ignore: ['./src/pug/**/_*.pug'],
@@ -84,6 +55,7 @@ const app = {
   },
 
   output: {
+    assetModuleFilename: 'img/[name][ext]',
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js',
   },
@@ -138,7 +110,10 @@ const app = {
           },
         ],
       },
-      imgLoader,
+      {
+        test: /\.(png|jpg|svg)$/,
+        type: 'asset',
+      },
     ],
   },
 
