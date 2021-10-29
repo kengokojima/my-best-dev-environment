@@ -60,11 +60,11 @@
   },
   "lint-staged": {
     "*.{js, jsx, ts, tsx}": [
-      "eslint --fix",
+      "eslint --fix src/ts/**/*" ,
       "prettier --write"
     ],
     "*.{css, scss}": [
-      "stylelint --fix"
+      "stylelint --fix src/scss/**/*"
     ]
   }
 }
