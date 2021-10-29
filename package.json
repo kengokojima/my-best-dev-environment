@@ -60,11 +60,11 @@
   },
   "lint-staged": {
     "*.{js, jsx, ts, tsx}": [
-      "eslint --fix src/ts/**/*" ,
-      "prettier --write"
+      "yarn eslint . --fix" ,
+      "yarn prettier --write ."
     ],
     "*.{css, scss}": [
-      "stylelint --fix src/scss/**/*"
+      "yarn stylelint --fix ."
     ]
   }
 }

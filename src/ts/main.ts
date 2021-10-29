@@ -1,4 +1,4 @@
 import '../scss/style.scss'
 
-let string = ''
-string = 0
+let strings = ''
+strings = 0
