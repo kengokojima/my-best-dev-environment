@@ -46,7 +46,7 @@ yarn build
 src
 ├── pug
 │   ├── includes
-│   │   ├── components 
+│   │   ├── components
 │   │   ├── _layout.pug
 │   │   └── _meta.pug
 │   ├── index.pug
@@ -89,8 +89,8 @@ ex.) `_button.pug`,`_card.pug`
 
 #### components
 
-再利用するパーツを配置。\ 
-基本的には同名pugファイルと対応している。
+再利用するパーツを配置。\
+基本的には同名 pug ファイルと対応している。
 
 #### foundation
 

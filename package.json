@@ -59,11 +59,11 @@
     "ress": "^4.0.0"
   },
   "lint-staged": {
-    "*.{js, jsx, ts, tsx}": [
-      "yarn eslint . --fix" ,
+    "*.{js,jsx,ts,tsx}": [
+      "yarn eslint . --fix",
       "yarn prettier --write ."
     ],
-    "*.{css, scss}": [
+    "*.{css,scss}": [
       "yarn stylelint --fix ."
     ]
   }
