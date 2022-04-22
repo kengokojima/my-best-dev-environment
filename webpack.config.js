@@ -131,32 +131,35 @@ const app = {
     }),
     new StylelintPlugin({
       files: STYLELINT,
-      syntax: 'scss',
+      customSyntax: 'postcss-scss',
       fix: true,
     }),
 
     new ImageMinimizerPlugin({
-      minimizerOptions: {
-        plugins: [
-          ['gifsicle', { interlaced: true }],
-          ['mozjpeg', { quality: 85, progressive: true }],
-          [
-            'pngquant',
-            {
-              quality: [0.6, 0.8],
-            },
+      minimizer: {
+        implementation: ImageMinimizerPlugin.imageminMinify,
+        options: {
+          plugins: [
+            ['gifsicle', { interlaced: true }],
+            ['mozjpeg', { quality: 85, progressive: true }],
+            [
+              'pngquant',
+              {
+                quality: [0.6, 0.8],
+              },
+            ],
+            [
+              'svgo',
+              {
+                plugins: [
+                  {
+                    removeViewBox: false,
+                  },
+                ],
+              },
+            ],
           ],
-          [
-            'svgo',
-            {
-              plugins: [
-                {
-                  removeViewBox: false,
-                },
-              ],
-            },
-          ],
-        ],
+        },
       },
     }),
   ],
