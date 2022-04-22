@@ -1,0 +1,9 @@
+@use '../global/' as g;
+
+.footer {
+  background: #000000;
+
+  &__inner {
+    background: g.$color;
+  }
+}

@@ -1,0 +1,12 @@
+extends ./includes/_layout
+block var
+  - metas = {}
+  - metas.title = 'title'
+  - metas.url = 'url'
+  - metas.image = 'image.png'
+  - metas.site_name = 'site_name'
+  - metas.description = 'description'
+
+block title
+  title= metas.title
+
